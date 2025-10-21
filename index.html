@@ -3,15 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>To-Do PWA</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>My To-Do</title>
   <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>📝 To-Do App</h1>
-    <div class="input-area">
-      <input id="taskInput" type="text" placeholder="Enter your task..." />
+    <header>
+      <h1 id="pageTitle">Today's Tasks</h1>
+      <div class="header-right">
+        <button id="historyBtn">📜</button>
+        <button id="addBtn">＋</button>
+      </div>
+    </header>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <!-- Add Task Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Add Task</h2>
+      <input id="taskInput" type="text" placeholder="Task name..." />
       <select id="repeatSelect">
         <option value="none">One-time</option>
         <option value="daily">Daily</option>
@@ -19,15 +32,17 @@
         <option value="10">Next 10 days</option>
         <option value="30">Next 30 days</option>
       </select>
-      <button onclick="addTask()">Add</button>
+      <div class="modal-actions">
+        <button id="saveBtn">Save</button>
+        <button id="cancelBtn">Cancel</button>
+      </div>
     </div>
-    <ul id="taskList"></ul>
   </div>
 
   <script src="script.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js');
+      navigator.serviceWorker.register('./service-worker.js');
     }
   </script>
 </body>

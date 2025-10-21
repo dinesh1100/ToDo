@@ -1,75 +1,101 @@
 body {
+  margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #f3f3f3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background: #f4f4f4;
 }
 
 .container {
+  max-width: 400px;
+  margin: 40px auto;
   background: white;
-  padding: 20px 30px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 350px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 20px;
 }
 
-h1 {
-  text-align: center;
-  color: #333;
-}
-
-.input-area {
-  display: flex;
-  gap: 8px;
-}
-
-input,
-select {
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-input {
-  flex: 1;
-}
-
-button {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0056b3;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-li {
-  padding: 10px;
-  background: #f8f8f8;
-  border-radius: 8px;
-  margin-bottom: 8px;
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-li span {
-  flex: 1;
+h1 { color: #333; margin: 0; }
+
+.header-right button {
+  margin-left: 8px;
 }
 
-small {
-  font-size: 0.8em;
-  color: gray;
+#addBtn, #historyBtn {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+#addBtn:hover, #historyBtn:hover {
+  background: #0056b3;
+}
+
+ul { list-style: none; padding: 0; margin-top: 20px; }
+
+li {
+  background: #f8f8f8;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+li.done { background: #d4edda; text-decoration: line-through; }
+li.cancelled { background: #f8d7da; }
+
+li .actions {
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+}
+
+.actions button {
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-size: 0.9em;
+}
+
+.actions .done-btn { background: #28a745; }
+.actions .cancel-btn { background: #dc3545; }
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+}
+
+.modal-content input, select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
 }
