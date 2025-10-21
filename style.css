@@ -1,16 +1,16 @@
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
 }
 
-.container {
+.app {
   max-width: 400px;
   margin: 40px auto;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  background: #fff;
   padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 header {
@@ -19,75 +19,82 @@ header {
   align-items: center;
 }
 
-h1 { color: #333; margin: 0; }
-
-.header-right button {
-  margin-left: 8px;
+h1 {
+  margin: 0;
+  color: #333;
 }
 
-#addBtn, #historyBtn {
+#addTaskBtn {
   background: #007bff;
   color: white;
   border: none;
   border-radius: 50%;
-  font-size: 20px;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
   cursor: pointer;
 }
 
-#addBtn:hover, #historyBtn:hover {
+#addTaskBtn:hover {
   background: #0056b3;
 }
 
-ul { list-style: none; padding: 0; margin-top: 20px; }
+.task-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
 
-li {
-  background: #f8f8f8;
-  margin-bottom: 8px;
-  border-radius: 8px;
+.task-list li {
+  background: #f9f9f9;
   padding: 10px;
-}
-
-li.done { background: #d4edda; text-decoration: line-through; }
-li.cancelled { background: #f8d7da; }
-
-li .actions {
-  margin-top: 6px;
+  border-radius: 8px;
+  margin-bottom: 10px;
   display: flex;
-  gap: 6px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.actions button {
-  border: none;
+.task-list li.done {
+  background: #d4edda;
+  text-decoration: line-through;
+}
+
+.task-list li.cancelled {
+  background: #f8d7da;
+}
+
+.task-list .actions button {
+  margin-left: 5px;
   padding: 4px 8px;
+  border: none;
   border-radius: 6px;
-  cursor: pointer;
   color: white;
-  font-size: 0.9em;
+  cursor: pointer;
 }
 
-.actions .done-btn { background: #28a745; }
-.actions .cancel-btn { background: #dc3545; }
+.done-btn { background: #28a745; }
+.cancel-btn { background: #dc3545; }
 
-/* Modal */
+/* Modal styles */
 .modal {
   position: fixed;
   inset: 0;
   display: none;
-  background: rgba(0,0,0,0.5);
   justify-content: center;
   align-items: center;
+  background: rgba(0,0,0,0.5);
 }
 
 .modal-content {
   background: white;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 10px;
   width: 300px;
 }
 
-.modal-content input, select {
+.modal-content input,
+.modal-content select {
   width: 100%;
   padding: 8px;
   margin: 8px 0;
@@ -95,7 +102,17 @@ li .actions {
   border: 1px solid #ccc;
 }
 
-.modal-actions {
+.buttons {
   display: flex;
   justify-content: space-between;
 }
+
+.buttons button {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#saveTaskBtn { background: #007bff; color: white; }
+#cancelBtn { background: #ccc; }

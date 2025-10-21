@@ -1,4 +1,4 @@
-const CACHE_NAME = 'todo-pwa-v3';
+const CACHE_NAME = 'todo-pwa-v4';
 const FILES_TO_CACHE = [
   './',
   './index.html',
@@ -12,7 +12,5 @@ self.addEventListener('install', e => {
 });
 
 self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(res => res || fetch(e.request))
-  );
+  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
 });

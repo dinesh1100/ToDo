@@ -3,28 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My To-Do</title>
-  <link rel="manifest" href="manifest.json" />
+  <title>To-Do Today</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
-  <div class="container">
+  <div class="app">
     <header>
-      <h1 id="pageTitle">Today's Tasks</h1>
-      <div class="header-right">
-        <button id="historyBtn">📜</button>
-        <button id="addBtn">＋</button>
-      </div>
+      <h1>Today's Tasks</h1>
+      <button id="addTaskBtn" title="Add Task">＋</button>
     </header>
 
-    <ul id="taskList"></ul>
+    <ul id="taskList" class="task-list"></ul>
   </div>
 
-  <!-- Add Task Modal -->
+  <!-- Modal for adding new task -->
   <div id="modal" class="modal">
     <div class="modal-content">
-      <h2>Add Task</h2>
-      <input id="taskInput" type="text" placeholder="Task name..." />
+      <h2>Create New Task</h2>
+      <input type="text" id="taskInput" placeholder="Enter task name..." />
+      <label for="repeatSelect">Repeat:</label>
       <select id="repeatSelect">
         <option value="none">One-time</option>
         <option value="daily">Daily</option>
@@ -32,8 +30,8 @@
         <option value="10">Next 10 days</option>
         <option value="30">Next 30 days</option>
       </select>
-      <div class="modal-actions">
-        <button id="saveBtn">Save</button>
+      <div class="buttons">
+        <button id="saveTaskBtn">Save</button>
         <button id="cancelBtn">Cancel</button>
       </div>
     </div>
